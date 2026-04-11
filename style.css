@@ -1,0 +1,42 @@
+/* General page styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  margin: 20px;
+  line-height: 1.6;
+}
+
+/* Headings */
+h1 {
+  color: #2c3e50;
+  text-align: center;
+}
+
+h2 {
+  color: #16a085;
+  margin-top: 20px;
+}
+
+/* Paragraphs */
+p {
+  font-size: 16px;
+  color: #333;
+}
+
+/* Image styling */
+img {
+  display: block;
+  margin: 10px auto;
+  border: 3px solid #16a085;
+  border-radius: 8px;
+}
+
+/* Links */
+a {
+  color: #2980b9;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
