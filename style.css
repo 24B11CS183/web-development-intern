@@ -1,42 +1,111 @@
-/* General page styling */
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
-  margin: 20px;
-  line-height: 1.6;
-}
-
-/* Headings */
-h1 {
-  color: #2c3e50;
-  text-align: center;
-}
-
-h2 {
-  color: #16a085;
-  margin-top: 20px;
-}
-
-/* Paragraphs */
-p {
-  font-size: 16px;
+  background: #f4f4f4;
   color: #333;
 }
 
-/* Image styling */
-img {
-  display: block;
-  margin: 10px auto;
-  border: 3px solid #16a085;
+/* Navbar */
+.navbar {
+  background: black;
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+}
+
+/* Grid Layout */
+.grid-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Contact Form */
+.contact-form, .todo-gallery {
+  background: #fff;
+  padding: 20px;
   border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-/* Links */
-a {
-  color: #2980b9;
-  text-decoration: none;
+.contact-form h2, .todo-gallery h2 {
+  margin-bottom: 15px;
+  text-align: center;
 }
 
-a:hover {
-  text-decoration: underline;
+.contact-form label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 10px;
+  background:black;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background: black;
+}
+
+/* To-Do List */
+.todo-gallery input {
+  width: 70%;
+  padding: 8px;
+  margin-right: 5px;
+}
+
+.todo-gallery button {
+  padding: 8px 12px;
+  background: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.todo-gallery button:hover {
+  background: #1e7e34;
+}
+
+.todo-gallery ul {
+  list-style: none;
+  margin-top: 15px;
+}
+
+.todo-gallery li {
+  background: #f9f9f9;
+  padding: 8px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .grid-layout {
+    grid-template-columns: 1fr;
+  }
 }

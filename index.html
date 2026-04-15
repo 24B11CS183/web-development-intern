@@ -2,22 +2,60 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My First Webpage</title>
+  <title>Task 2 - Contact Form & To-Do List</title>
   <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
 </head>
 <body>
-  <h1>Welcome to My Webpage</h1>
-  <h2>About Me</h2>
-  <p>Hello! I am learning web development at ApexPlanet.</p>
+  <!-- Navigation -->
+  <header>
+    <nav class="navbar">
+      <h1>ApexPlanet Internship</h1>
+    </nav>
+  </header>
 
-  <h2>ApexPlanet Logo</h2>
-  <img src="apexpalnet.png" alt="ApexPlanet Logo" width="300">
+  <!-- Main Layout -->
+  <main class="grid-layout">
+    <!-- Contact Form -->
+    <section class="contact-form">
+      <h2>Contact Us</h2>
+      <form id="contactForm">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
 
-  <button onclick="showMessage()">Click Me</button>
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
 
-  <h2>Useful Link</h2>
-  <p>Visit <a href="https://www.apexplanet.in/internship/admin/auth/login" target="_blank">ApexPlanet</a> for more resources.</p>
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="123-456-7890">
+
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <label for="country">Country:</label>
+        <select id="country" name="country">
+          <option value="">Select...</option>
+          <option value="India">India</option>
+          <option value="USA">USA</option>
+          <option value="UK">UK</option>
+          <option value="Other">Other</option>
+        </select>
+
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
+    <!-- To-Do List -->
+    <section class="todo-gallery">
+      <h2>My To-Do List</h2>
+      <input type="text" id="taskInput" placeholder="Enter a task">
+      <button onclick="addTask()">Add Task</button>
+      <ul id="taskList"></ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
-
