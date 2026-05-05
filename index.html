@@ -2,57 +2,42 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Task 2 - Contact Form & To-Do List</title>
+  <title>Task 3 - Advanced Styling & JS</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <!-- Navigation -->
   <header>
     <nav class="navbar">
-      <h1>ApexPlanet Internship</h1>
+      <h1>ApexPlanet Internship – Task 3</h1>
     </nav>
   </header>
 
-  <!-- Main Layout -->
+  <!-- Responsive Layout -->
   <main class="grid-layout">
-    <!-- Contact Form -->
-    <section class="contact-form">
-      <h2>Contact Us</h2>
-      <form id="contactForm">
-        <label for="name">Full Name:</label>
-        <input type="text" id="name" name="name" required>
-
-        <label for="email">Email Address:</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="phone">Phone Number:</label>
-        <input type="tel" id="phone" name="phone" placeholder="123-456-7890">
-
-        <label for="subject">Subject:</label>
-        <input type="text" id="subject" name="subject" required>
-
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
-
-        <label for="country">Country:</label>
-        <select id="country" name="country">
-          <option value="">Select...</option>
-          <option value="India">India</option>
-          <option value="USA">USA</option>
-          <option value="UK">UK</option>
-          <option value="Other">Other</option>
-        </select>
-
-        <button type="submit">Submit</button>
-      </form>
+    <!-- Quiz Section -->
+    <section class="quiz-section">
+      <h2>Interactive Quiz</h2>
+      <div id="quiz-container"></div>
+      <button id="nextBtn">Next Question</button>
+      <div id="result"></div>
     </section>
 
-    <!-- To-Do List -->
-    <section class="todo-gallery">
-      <h2>My To-Do List</h2>
-      <input type="text" id="taskInput" placeholder="Enter a task">
-      <button onclick="addTask()">Add Task</button>
-      <ul id="taskList"></ul>
+    <!-- Carousel Section -->
+    <section class="carousel-section">
+      <h2>Image Carousel</h2>
+      <div class="carousel">
+        <img id="carouselImage" src="https://picsum.photos/400/250?random=1" alt="carousel">
+      </div>
+      <button onclick="prevImage()">Previous</button>
+      <button onclick="nextImage()">Next</button>
+    </section>
+
+    <!-- API Section -->
+    <section class="api-section">
+      <h2>Random Joke API</h2>
+      <button onclick="fetchJoke()">Get a Joke</button>
+      <p id="joke"></p>
     </section>
   </main>
 

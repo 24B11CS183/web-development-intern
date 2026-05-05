@@ -1,110 +1,67 @@
-/* General Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  font-family: Arial, sans-serif;
-  background: #f4f4f4;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
   color: #333;
+  min-height: 100vh;
 }
 
 /* Navbar */
 .navbar {
-  background: black;
+  background: #1e3a8a; /* deep blue */
   color: #fff;
   padding: 15px;
   text-align: center;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
 }
 
 /* Grid Layout */
 .grid-layout {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
   padding: 20px;
 }
 
-/* Contact Form */
-.contact-form, .todo-gallery {
-  background: #fff;
+/* Sections */
+.quiz-section, .carousel-section, .api-section {
+  background: #ffffff;
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-.contact-form h2, .todo-gallery h2 {
-  margin-bottom: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   text-align: center;
+  transition: transform 0.3s ease;
 }
 
-.contact-form label {
-  display: block;
-  margin: 10px 0 5px;
+.quiz-section:hover, .carousel-section:hover, .api-section:hover {
+  transform: translateY(-5px);
 }
 
-.contact-form input,
-.contact-form textarea,
-.contact-form select {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.contact-form button {
-  width: 100%;
-  padding: 10px;
-  background:black;
+/* Buttons */
+button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background: #0d9488; /* teal accent */
   color: #fff;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
+  transition: background 0.3s ease;
 }
 
-.contact-form button:hover {
-  background: black;
+button:hover {
+  background: #0f766e; /* darker teal */
 }
 
-/* To-Do List */
-.todo-gallery input {
-  width: 70%;
-  padding: 8px;
-  margin-right: 5px;
-}
-
-.todo-gallery button {
-  padding: 8px 12px;
-  background: #28a745;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.todo-gallery button:hover {
-  background: #1e7e34;
-}
-
-.todo-gallery ul {
-  list-style: none;
-  margin-top: 15px;
-}
-
-.todo-gallery li {
-  background: #f9f9f9;
-  padding: 8px;
-  margin-bottom: 8px;
-  border-radius: 4px;
-  display: flex;
-  justify-content: space-between;
+/* Carousel */
+.carousel img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .grid-layout {
     grid-template-columns: 1fr;
   }

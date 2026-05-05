@@ -1,48 +1,60 @@
+// Quiz Data
+const quizData = [
+  { question: "What does HTML stand for?", options: ["Hyper Text Markup Language", "High Tech Modern Language", "Hyperlinks Text Management Language"], answer: "Hyper Text Markup Language" },
+  { question: "Which CSS property controls text size?", options: ["font-size", "text-style", "size"], answer: "font-size" },
+  { question: "Which keyword is used to declare a variable in JavaScript?", options: ["var", "let", "const", "All of the above"], answer: "All of the above" }
+];
 
-// Form Validation
-document.getElementById("contactForm").addEventListener("submit", function(event) {
-  event.preventDefault();
+let currentQuestion = 0;
+let score = 0;
 
-  const name = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const subject = document.getElementById("subject").value.trim();
-  const message = document.getElementById("message").value.trim();
+function loadQuiz() {
+  const quizContainer = document.getElementById("quiz-container");
+  quizContainer.innerHTML = `
+    <p>${quizData[currentQuestion].question}</p>
+    ${quizData[currentQuestion].options.map(opt => `<button onclick="checkAnswer('${opt}')">${opt}</button>`).join("")}
+  `;
+}
 
-  if (!name || !email || !subject || !message) {
-    alert("Please fill in all required fields.");
-    return;
+function checkAnswer(selected) {
+  if (selected === quizData[currentQuestion].answer) {
+    score++;
   }
+  document.getElementById("nextBtn").style.display = "block";
+}
 
-  const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-  if (!email.match(emailPattern)) {
-    alert("Please enter a valid email address.");
-    return;
+document.getElementById("nextBtn").addEventListener("click", () => {
+  currentQuestion++;
+  if (currentQuestion < quizData.length) {
+    loadQuiz();
+    document.getElementById("nextBtn").style.display = "none";
+  } else {
+    document.getElementById("quiz-container").innerHTML = "";
+    document.getElementById("result").innerText = `Quiz Completed! Your score: ${score}/${quizData.length}`;
+    document.getElementById("nextBtn").style.display = "none";
   }
-
-  alert("Form submitted successfully!");
 });
 
-// To-Do List
-function addTask() {
-  const taskInput = document.getElementById("taskInput");
-  const taskValue = taskInput.value.trim();
-  if (taskValue === "") return;
+// Initialize Quiz
+loadQuiz();
 
-  const li = document.createElement("li");
-  li.textContent = taskValue;
+// Carousel
+let currentImage = 1;
+function nextImage() {
+  currentImage++;
+  if (currentImage > 5) currentImage = 1;
+  document.getElementById("carouselImage").src = `https://picsum.photos/400/250?random=${currentImage}`;
+}
 
-  const removeBtn = document.createElement("button");
-  removeBtn.textContent = "Remove";
-  removeBtn.style.marginLeft = "10px";
-  removeBtn.style.background = "#dc3545";
-  removeBtn.style.color = "#fff";
-  removeBtn.style.border = "none";
-  removeBtn.style.padding = "4px 8px";
-  removeBtn.style.borderRadius = "4px";
-  removeBtn.onclick = () => li.remove();
+function prevImage() {
+  currentImage--;
+  if (currentImage < 1) currentImage = 5;
+  document.getElementById("carouselImage").src = `https://picsum.photos/400/250?random=${currentImage}`;
+}
 
-  li.appendChild(removeBtn);
-  document.getElementById("taskList").appendChild(li);
-
-  taskInput.value = "";
+// API Fetch
+async function fetchJoke() {
+  const response = await fetch("https://official-joke-api.appspot.com/random_joke");
+  const data = await response.json();
+  document.getElementById("joke").innerText = `${data.setup} - ${data.punchline}`;
 }
