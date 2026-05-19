@@ -2,27 +2,102 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Product Listing</title>
+  <title>NeoShop - Final Project</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Product Page</h1>
-  <div>
-    <label>Filter by Category:</label>
-    <select id="categoryFilter" onchange="filterProducts()">
-      <option value="all">All</option>
-      <option value="electronics">Electronics</option>
-      <option value="clothing">Clothing</option>
-    </select>
+  <!-- Navbar -->
+  <header class="navbar">
+    <h1 class="animated-title">NeoShop ✨</h1>
+    <nav>
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#cart">Cart</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <label>Sort by:</label>
-    <select id="sortOption" onchange="sortProducts()">
-      <option value="name">Name</option>
-      <option value="rating">Rating</option>
-    </select>
+  <!-- Hero -->
+  <!-- Hero -->
+<section id="hero" class="hero">
+  <div class="hero-text">
+    <h1>Shop Smart, Shop Stylish</h1>
+    <p>Discover unique products with a modern, responsive design.</p>
+    <a href="#products" class="btn">Explore Products</a>
   </div>
+  <div class="hero-graphic">
+    <!-- Abstract decorative shape instead of product image -->
+    <div class="circle"></div>
+    <div class="wave"></div>
+  </div>
+</section>
 
-  <div id="productGrid" class="grid"></div>
+
+  <!-- Products -->
+  <section id="products">
+    <h2>Featured Products</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="headphones.jpg" alt="Wireless Headphones" loading="lazy">
+        <div class="card-content">
+          <h3>Wireless Headphones</h3>
+          <p>$50</p>
+          <button onclick="addToCart('Wireless Headphones', 50)">Add to Cart</button>
+        </div>
+      </div>
+      <div class="card">
+        <img src="smartphone.jpg" alt="Smartphone" loading="lazy">
+        <div class="card-content">
+          <h3>Smartphone</h3>
+          <p>$80</p>
+          <button onclick="addToCart('Smartphone', 80)">Add to Cart</button>
+        </div>
+      </div>
+      <div class="card">
+        <img src="gaming.jpg" alt="Gaming Mouse" loading="lazy">
+        <div class="card-content">
+          <h3>Gaming Mouse</h3>
+          <p>$40</p>
+          <button onclick="addToCart('Gaming Mouse', 40)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Neat Cart Section -->
+    <div id="cart" class="cart-box">
+      <h2>Your Cart 🛒</h2>
+      <div class="cart-content">
+        <ul id="cartList"></ul>
+        <p id="total"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="contact-form">
+      <h2>Contact Us</h2>
+      <form id="contactForm">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+    <div class="contact-info">
+      <h3>Get in Touch</h3>
+      <p>Email: support@neoshop.com</p>
+      <p>Phone: +91 98765 43210</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 NeoShop | Designed with ⚡</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
